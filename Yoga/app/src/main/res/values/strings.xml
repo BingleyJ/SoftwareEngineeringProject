@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Yoga</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="CustomWorkouts">Custom Workouts</string>
+    <string name="TOS_title">Terms of Service</string>
+    <string name="TOS_message">These are the terms of service. Do you accept them?</string>
+    <string name="SelectStyle"> Select a style</string>
+    <string name="AnusaraStyle"> Anusara</string>
+    <string name="AshtangaStyle"> Ashtanga</string>
+    <string name="BikramStyle"> Bikram </string>
+    <string name="HathaStyle"> Hatha </string>
+    <string name="HotYogaStyle"> Hot Yoga </string>
+    <string name="IyengarStyle"> Iyengar </string>
+    <string name="RestorativeYogaStyle"> Restorative Yoga </string>
+    <string name="VinyasaStyle"> Vinyasa </string>
+    <string name="title_activity_yoga_style_screen">YogaStyleScreen</string>
+
+</resources>

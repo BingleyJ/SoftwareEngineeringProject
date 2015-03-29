@@ -28,6 +28,14 @@
             android:name=".YogaStyleScreen"
             android:label="@string/title_activity_yoga_style_screen" >
         </activity>
+        <activity
+            android:name=".ActivityYogaPose"
+            android:label="@string/title_activity_activity_yoga_pose"
+            android:parentActivityName=".YogaStyleScreen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs410g1.yoga.YogaStyleScreen" />
+        </activity>
     </application>
 
 </manifest>

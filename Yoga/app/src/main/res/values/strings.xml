@@ -17,5 +17,7 @@
     <string name="RestorativeYogaStyle"> Restorative Yoga </string>
     <string name="VinyasaStyle"> Vinyasa </string>
     <string name="title_activity_yoga_style_screen">YogaStyleScreen</string>
+    <string name="title_activity_activity_yoga_pose">ActivityYogaPose</string>
+    <string name="Placeholder">PLACEHOLDER TEXT</string>
 
 </resources>

@@ -7,28 +7,34 @@
     tools:context="com.cs410g1.yoga.ActivityYogaPose"
     android:id="@+id/sampleID">
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/TestText"
-        android:id="@+id/textView2"
-        android:maxLength="7000"
-            android:scrollbars="vertical"
-            android:ellipsize="end"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="37dp"
-        />
-    </ScrollView>
-    <view
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        ></view>
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/TestText"
+                android:id="@+id/textView2"
+                android:maxLength="2000"
+                android:scrollbars="vertical"
+                android:ellipsize="end"
+                />
+        </ScrollView>
+
+
+    </LinearLayout>
+
 </RelativeLayout>

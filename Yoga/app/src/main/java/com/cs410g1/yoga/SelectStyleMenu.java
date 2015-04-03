@@ -44,7 +44,9 @@ public class SelectStyleMenu extends ActionBarActivity {
     public void yogaButtonClicked(View view)
     {
         Button b = (Button) view;
-        Intent YogaStyleIntent = new Intent(this, ActivityYogaPose.class);
+        Intent YogaStyleIntent;
+
+        YogaStyleIntent = new Intent(this, YogaStyleScreen.class);
         YogaStyleIntent.putExtra("Name", b.getText());
 
         for(int i = 0; i < Settings.styleBackgrounds.length; i+=2)

@@ -18,6 +18,12 @@ public class MainMenu extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        CheckBox check = (CheckBox) findViewById(R.id.TOS_check);
+
+        if(check.isChecked())
+        {
+            enableButtons();
+        }
 
         disableButtons();
     }
@@ -131,4 +137,5 @@ public class MainMenu extends ActionBarActivity {
         disableButton.setAlpha(1.0f);
         disableButton.setClickable(true);
     }
+
 }

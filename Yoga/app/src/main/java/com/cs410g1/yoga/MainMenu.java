@@ -1,15 +1,14 @@
 package com.cs410g1.yoga;
 
 import android.content.Intent;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.Button;
+import android.widget.CheckBox;
 
 
 public class MainMenu extends ActionBarActivity {
@@ -20,14 +19,28 @@ public class MainMenu extends ActionBarActivity {
         setContentView(R.layout.activity_main_menu);
         CheckBox check = (CheckBox) findViewById(R.id.TOS_check);
 
+        disableButtons();
+        /*
         if(check.isChecked())
         {
             enableButtons();
         }
-
-        disableButtons();
+        */
     }
 
+    /*
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        CheckBox check = (CheckBox) findViewById(R.id.TOS_check);
+        disableButtons();
+        if(check.isChecked())
+        {
+            enableButtons();
+        }
+    }
+    */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -47,8 +60,10 @@ public class MainMenu extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
-        return super.onOptionsItemSelected(item);
+        else
+        {
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     //Called when the "I agree" button of the TOS Dialog is pressed
@@ -88,6 +103,7 @@ public class MainMenu extends ActionBarActivity {
         {
             disableButtons();
         }
+
     }
 
     //Connecting buttons to other activities

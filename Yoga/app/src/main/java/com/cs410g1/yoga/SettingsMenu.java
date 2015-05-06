@@ -1,24 +1,26 @@
 package com.cs410g1.yoga;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 
 
 public class SettingsMenu extends ActionBarActivity {
+
+    MediaPlayer mySound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_menu);
-
-        SeekBar sb = (SeekBar)findViewById(R.id.seekBar);
-        sb.setProgress(Settings.masterVolume);
-        sb.setOnSeekBarChangeListener(new VolumeBarListener());
+        mySound = MediaPlayer.create(this, R.raw.wish);
     }
 
 
@@ -46,20 +48,15 @@ public class SettingsMenu extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private class VolumeBarListener implements SeekBar.OnSeekBarChangeListener
+    public void onMusicToggleClicked(View view)
     {
-        private String TAG = "VolumeBarListener";
-        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
+        if(mySound.isPlaying())
         {
-            Settings.masterVolume = progress;
-            Integer i = Settings.masterVolume;
-            Log.d(TAG,i.toString());
+            mySound.pause();
         }
-
-        public void onStartTrackingTouch(SeekBar seekBar)
-        {}
-
-        public void onStopTrackingTouch(SeekBar seekBar)
-        {}
+        else
+        {
+            mySound.start();
+        }
     }
 }

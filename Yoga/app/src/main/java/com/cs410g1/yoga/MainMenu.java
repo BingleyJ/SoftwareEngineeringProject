@@ -1,6 +1,7 @@
 package com.cs410g1.yoga;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBarActivity;
@@ -13,22 +14,22 @@ import android.widget.CheckBox;
 
 public class MainMenu extends ActionBarActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         CheckBox check = (CheckBox) findViewById(R.id.TOS_check);
-
         disableButtons();
-        /*
+
         if(check.isChecked())
         {
             enableButtons();
         }
-        */
+
     }
 
-    /*
+
     @Override
     protected void onStart()
     {
@@ -40,7 +41,7 @@ public class MainMenu extends ActionBarActivity {
             enableButtons();
         }
     }
-    */
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

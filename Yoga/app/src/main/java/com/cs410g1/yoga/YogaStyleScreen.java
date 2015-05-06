@@ -1,12 +1,17 @@
 package com.cs410g1.yoga;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.provider.CalendarContract;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.Calendar;
 
 
 public class YogaStyleScreen extends ActionBarActivity {
@@ -45,5 +50,23 @@ public class YogaStyleScreen extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onAddEventClicked(View view)
+    {
+        Intent intent = new Intent(Intent.ACTION_INSERT);
+        intent.setType("vnd.android.cursor.item/event");
+
+        Calendar cal = Calendar.getInstance();
+        long startTime = cal.getTimeInMillis();
+        long endTime = cal.getTimeInMillis() + 60 * 60 * 1000;
+
+        intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime);
+        intent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime);
+
+        intent.putExtra(CalendarContract.Events.TITLE, "Yoga Workout");
+        intent.putExtra(CalendarContract.Events.DESCRIPTION, "Workout Name Here");
+
+        startActivity(intent);
     }
 }
